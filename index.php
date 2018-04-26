@@ -4,18 +4,40 @@
  */
 get_header();
 ?>
+<?php
+$text_title_blok1 = get_post_meta( $post->ID, 'text_title_blok1', true);
+$text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
+ ?>
+ <?php if($text_title_blok1 && $text_blok1){ ?>
 <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center text-center">
-                    <h2 class="section-heading">Скидки</h2>
+                    <h2 class="section-heading"><?php
+                    if($text_title_blok1){
+                     echo $text_title_blok1;
+                        }else{
+                      ?> 
+                    Скидка
+                    <?php } ?>
+                  </h2>
                     <hr class="light">
-                    <p class="text-faded" style="font-size:18px;">При оформлении заказа на ремонт через сайт, Вы  получаете <span style="font-size:25px;">скидку 10%</span>!</p>
+                    <p class="text-faded" style="font-size:18px;">
+                        <?php
+                    if($text_blok1){
+                     echo $text_blok1;
+                        }else{
+                      ?> 
+                    При оформлении заказа на ремонт через сайт, Вы  получаете <span style="font-size:25px;">скидку 10%</span>!
+                   <?php } ?>
+                    </p>
                     <a href="" class="btn btn-default btn-xl sr-button my_button_zakaz" data-toggle="modal" data-target="#myModal">Заказать!</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <?php } ?>
 
     <section id="services">
         <div class="container">
@@ -178,11 +200,20 @@ get_header();
 
         </div>
     </section>
+    <?php 
+    $our_advantages = get_post_meta( $post->ID, 'Our_advantages', true);
+    $name_block_advantages = get_post_meta( $post->ID, 'name_block_advantages', true);
+    if($our_advantages && $name_block_advantages){     ?>
     <section class="no-padding" id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Наши приемущества</h2>
+                    <h2 class="section-heading">
+                    <?php if($name_block_advantages){ ?>
+                    <?php echo $name_block_advantages; ?>
+                    <?php }else{ ?>
+                    Наши приемущества</h2>
+                    <?php } ?>
                     <hr class="primary">
                 </div>
             </div>
@@ -190,224 +221,35 @@ get_header();
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
 
+                <?php 
+                     
+                     if($our_advantages){
+                        foreach ($our_advantages as  $value) {
+                ?>
 
-
-                <div class="col-lg-3 col-sm-3">                    
+                 <div class="col-lg-3 col-sm-3">                    
                     <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
                          <div class="project-category text-faded">
-                                    Бесплатная диагностика
+                                    <?php echo $value[ord_title]; ?>
                                 </div>
-                        <img src="img/portfolio/thumbnails/1.png" class="img-responsive" alt="">
+                        <img src="<?php echo $value[Our_upload_fon]; ?>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 
                                 <div class="project-name">
-                                    Быстрое и точное выявление любых неисправностей в кратчайшие сроки – от 15 минут.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Гарантия на все работы
-                                </div>
-                        <img src="img/portfolio/thumbnails/2.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                     Гарантия на выполненные работы и комплектующие до 2-х лет в зависимости от вида ремонта.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Самые низкие цены
-                                </div>
-                        <img src="img/portfolio/thumbnails/3.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Мы производим квалифицированный ремонт в кратчайшие сроки с минимальными затратами для Вас.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Более 8 лет на рынке
-                                </div>
-                        <img src="img/portfolio/thumbnails/4.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Штат высококвалифицированных специалистов с многолетним опытом работы - от 511111 лет.
+                                    <?php echo $value[ord_description]; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-               <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Бесплатная диагностика
-                                </div>
-                        <img src="img/portfolio/thumbnails/4.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Быстрое и точное выявление любых неисправностей в кратчайшие сроки – от 15 минут.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Гарантия на все работы
-                                </div>
-                        <img src="img/portfolio/thumbnails/3.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                     Гарантия на выполненные работы и комплектующие до 2-х лет в зависимости от вида ремонта.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Самые низкие цены
-                                </div>
-                        <img src="img/portfolio/thumbnails/2.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Мы производим квалифицированный ремонт в кратчайшие сроки с минимальными затратами для Вас.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Более 8 лет на рынке
-                                </div>
-                        <img src="img/portfolio/thumbnails/1.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Штат высококвалифицированных специалистов с многолетним опытом работы - от 511111 лет.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               <!--  
-                <div class="col-lg-3 col-sm-3">
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box">
-                        <div class="project-category text-faded">
-                                    Более 8 лет на рынке
-                                </div>
-                        <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Штат высококвалифицированных специалистов с многолетним опытом работы - от 5 лет.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <?php } } ?>
 
-
- <!-- <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Бесплатная диагностика
-                                </div>
-                        <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Быстрое и точное выявление любых неисправностей в кратчайшие сроки – от 15 минут.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-</div>
-                <div class="col-lg-3 col-sm-3">
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box">
-                        <div class="project-category text-faded">
-                                    Гарантия на все работы
-                                </div>
-                        <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Гарантия на выполненные работы и комплектующие до 2-х лет в зависимости от вида ремонта.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    Самые низкие цены
-                                </div>
-                        <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                               
-                                <div class="project-name">
-                                    Мы производим квалифицированный ремонт в кратчайшие сроки с минимальными затратами для Вас.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box">
-                        <div class="project-category text-faded">
-                                    Более 8 лет на рынке
-                                </div>
-                        <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    Штат высококвалифицированных специалистов с многолетним опытом работы - от 5 лет.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
- -->
             </div>
         </div>
     </section>
+<?php } ?>
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="row">

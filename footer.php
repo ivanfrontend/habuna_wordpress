@@ -1,5 +1,5 @@
  <!-- ОТЗЫВЫ  END-->
-
+<?php if(ot_get_option('lat') && ot_get_option('lng')){ ?>
     <div id="map" style="height: 450px">
         
     </div>
@@ -16,6 +16,7 @@
         });
       }
     </script>
+    <?php } ?>
 
 
   
@@ -24,15 +25,65 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Гарантия качества</h2>
+                    <h2 class="section-heading">
+                        <?php if(ot_get_option('name_title_block_footer')){ 
+                            echo ot_get_option('name_title_block_footer'); ?>
+                       <?php } else{ ?>
+                        Контакты 
+                        <?php } ?>
+                        
+
+                    </h2>
                     <hr class="primary">
-                    <p>Ассоциация Компьютерных Мастеров</p>
+                    <p>
+                    <?php if(ot_get_option('name_description_block_footer')){ ?>
+                    <?php echo ot_get_option('name_description_block_footer'); ?>
+                    <?php }else{ ?>
+                    Свяжитесь с нами любым удобным способом
+                    <?php } ?>
+                </p>
                 </div>
                 <div class="col-lg-12 text-center">
                     <a class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal" style=" box-shadow: inset 0 3px 5px rgba(0,0,0,0); margin-left: 10px; font-size:16px;"><i class="fa fa-envelope-o fa-3x sr-contact"></i><br />Отправить заявку</a>                    
-                    <a class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />+375 (29) 848-88-55</a>                                        
-                    <a class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />+375 (29) 627-69-77</a>
-                    <a class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-map-marker fa-3x sr-contact" aria-hidden="true"></i><br />п-р Партизанский 8.,<br /> корп. 15 ком. 104.</a>                                          
+                        <?php if(ot_get_option('phone-header1')) {
+                            $str = ot_get_option('phone-header1');
+                        $result = preg_replace("/[^,.0-9]/", '', $str);
+                            ?>
+                          <a href="tel:+<?php echo $result ?>" class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br /> 
+                          <?php echo ot_get_option('phone-header1') ?> </a> 
+                        <?php }else{ ?>
+                         
+                         <a href="tel:+375298488855" class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />
+                            +375 (29) 848-88-55
+                         </a> 
+                            
+                        <?php } ?>
+
+
+
+                         <?php if(ot_get_option('phone-header2')) {
+                            $str2 = ot_get_option('phone-header2');
+                        $result2 = preg_replace("/[^,.0-9]/", '', $str2);
+                            ?>
+                          <a href="tel:+<?php echo $result2 ?>" class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br /> 
+                          <?php echo ot_get_option('phone-header2') ?> </a> 
+                        <?php }else{ ?>
+                         
+                         <a href="tel:+375296276977" class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />
+                            +375 (29) 627-69-77
+                         </a> 
+                            
+                        <?php } ?>
+                   
+                                                       
+                    <a class="btn btn-xl sr-button" style="margin:0px; box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-map-marker fa-3x sr-contact" aria-hidden="true"></i><br />
+                        <?php if(ot_get_option('legal_adres')){ 
+                                echo ot_get_option('legal_adres');
+                            ?>
+                        <?php }else{ ?>
+                        п-р Партизанский 8., корп. 15 ком. 104.
+                        <?php } ?>
+                    </a>                                          
                 </div>
             </div>
         </div>
