@@ -50,3 +50,5 @@
         return false;
     });
 });
+$('.my_class_none').last().addClass('active');
+console.log('qwwrwerwetew');

@@ -250,31 +250,95 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
         </div>
     </section>
 <?php } ?>
+<?php
+$name_block_priziv = get_post_meta( $post->ID, 'name_block_priziv', true);
+$description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv', true);
+ if( $name_block_priziv || $description_block_priziv){ ?>
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Внимание!</h2>
+                    <h2 class="section-heading"><?php echo $name_block_priziv ?></h2>
                     <hr class="light">
                     <p class="text-faded2" style="text-align:left;">
-                        В связи с участившимися случаями мошенничества <span style="font-size:25px;">мы предлагаем</span>, вам выбор оплаты наших услуги:
-                        <br /> 1. Вы оплачиваете нашу работу по типу и количеству сделанных операций<br /> 2. По времени
+                        <?php echo $description_block_priziv ?>
                     </p>
                 </div>
             </div>
         </div>
     </aside>
-
+<?php } ?>
 
       <!-- ОТЗЫВЫ -->
 
       <section id="testimonialTabs" class="row contentRowPad">
         <div class="container">
+            <?php 
+                $name_block_mnenie = get_post_meta( $post->ID, 'name_block_mnenie', true);
+                if($name_block_mnenie){
+             ?>
             <div class="row sectionTitle">
+                <h3 class="reviews"><?php echo $name_block_mnenie ?></h3>
+            </div>
+            <?php }else{ ?>
+             <div class="row sectionTitle">
                 <h3 class="reviews">Наши отзывы</h3>
             </div>
+            <?php } ?>
             <div class="row">
+
+
+         
+
+
+
                 <ul class="nav nav-tabs" role="tablist" id="testiTab">
+                <?php 
+                $setings_list_mnenie = get_post_meta( $post->ID, 'setings_list_mnenie', true);
+                foreach ($setings_list_mnenie as $key => $val) {
+                       
+             ?>
+                    <li role="presentation" class="my_class_none"><a href="#testi<?php echo $key ?>" aria-controls="testi<?php echo $key ?>" role="tab" data-toggle="tab">
+                        <img src="<?php echo $val[photo_men] ?>" alt="">
+                    </a></li>
+                    <?php } ?>
+                </ul>
+
+                <div class="tab-content testiTabContent">
+                      <?php 
+                $setings_list_mnenie = get_post_meta( $post->ID, 'setings_list_mnenie', true);
+                foreach ($setings_list_mnenie as $key => $val) {
+             ?>
+                    <div role="tabpanel" class="tab-pane" id="testi<?php echo $key ?>">
+                        <h5 class="customerName"><?php echo $val[fio_list] ?></h5>
+                        <h5 class="customerType"><?php echo $val[profi_puple] ?></h5>
+                        <p><?php echo $val[text_mnenie] ?></p>
+                    </div>
+                    <?php } ?>
+                </div>
+
+
+
+
+
+
+
+
+
+<script >
+    jQuery('.my_class_none').first().addClass('active');
+    jQuery('.tab-pane').first().addClass('active');
+</script>
+
+
+
+
+
+
+
+
+
+<!--                 <ul class="nav nav-tabs" role="tablist" id="testiTab">
                     <li role="presentation" class="active"><a href="#testi1" aria-controls="testi1" role="tab" data-toggle="tab">
                         <img src="img/2.png" alt="">
                     </a></li>
@@ -318,7 +382,10 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                         <h5 class="customerType">happy customer</h5>
                         <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
                     </div>
-                </div>
+                </div> -->
+
+
+
             </div>
         </div>
     </section>
@@ -330,55 +397,6 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<!-- <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1> -->
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
 get_footer();

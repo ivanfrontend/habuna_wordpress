@@ -53,7 +53,7 @@ function custom_meta_boxes() {
 
 
         array(
-        'label'       => 'Настройни блока наши приемущества',
+        'label'       => 'Настройки блока наши приемущества',
         'id'          => 'section_blok2_tab',
         'type'        => 'tab'
       ),
@@ -92,6 +92,86 @@ function custom_meta_boxes() {
          ),
     
             ),
+
+
+
+
+
+         array(
+        'label'       => 'Настройки блока объявления',
+        'id'          => 'section_blok3_tab',
+        'type'        => 'tab'
+      ), 
+                           array(
+        'id'          => 'name_block_priziv',
+        'label'       => 'Название блока',
+        'desc'        => '',
+        'type'        => 'text',
+      ), 
+                           array(
+        'id'          => 'description_block_priziv',
+        'label'       => 'Текст объявления',
+        'desc'        => '',
+        'type'        => 'textarea',
+      ), 
+
+
+
+
+
+
+  array(
+        'label'       => 'Настройки блока отзывы',
+        'id'          => 'section_blok4_tab',
+        'type'        => 'tab'
+      ), 
+
+                    array(
+        'id'          => 'name_block_mnenie',
+        'label'       => 'Название блока',
+        'desc'        => '',
+        'type'        => 'text',
+      ), 
+
+                     array(
+        'id'          => 'setings_list_mnenie',
+        'label'       => 'Добавить отзыв',
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'settings'    => array(
+                    array(
+        'id'          => 'photo_men',
+        'label'       => 'Загрузите фото человека',
+        'desc'        => '',
+        'type'        => 'upload',
+      ),
+          
+                array(
+        'id'          => 'fio_list',
+        'label'       => 'Указите Ф.И.О',
+        'desc'        => '',
+        'type'        => 'text',
+      ),
+                        array(
+        'id'          => 'profi_puple',
+        'label'       => 'Укажите професию',
+        'desc'        => '',
+        'type'        => 'text',
+      ),
+                         array(
+        'id'          => 'text_mnenie',
+        'label'       => 'Текст отзыва',
+        'desc'        => '',
+        'type'        => 'textarea',
+      ),
+         
+         ),
+    
+            ),
+
+
+
      
 
            array(
