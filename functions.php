@@ -31,8 +31,6 @@ require( trailingslashit( get_template_directory() ) . 'includes/functions-thems
 
 
 
-
-
 // Подключение меню
 
 function shabuna_menu_setup(){

@@ -39,23 +39,46 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
 
     <?php } ?>
 
-    <section id="services">
+     <?php 
+        $bg_mass=[];
+        $background_block = get_post_meta( $post->ID, 'background_block', true);
+        foreach ($background_block   as $key => $value) {
+            $bg_mass[] = $value;
+        }
+        ?>
+        <?php
+            if( empty( $bg_mass[5] ) ){
+        ?>              
+    <section style="background:<?php echo $bg_mass[0]; ?>" id="services">
+        <?php }else{ ?>
+        <section style="background-repeat: <?php echo $bg_mass[1] ?>;background-position: <?php echo $bg_mass[3] ?> ; background-size: <?php echo $bg_mass[4] ?>; background:url( <?php echo $bg_mass[5]; ?>);" id="services">
+            <?php } ?>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Мы предлагаем следующие услуги</h2>
+                    <?php $text_title_blok1_1 = get_post_meta( $post->ID, 'text_title_blok1_1', true); ?>
+                    <?php if($text_title_blok1_1 ){ ?>
+                    <h2 class="section-heading"><?php echo $text_title_blok1_1 ?></h2>
+                    <?php } ?>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
 
-
+               
 
             <div class="row my_heit">
+
+                    <?php 
+                    $services_list = get_post_meta( $post->ID, 'services_list', true);
+                        if($services_list){
+                            foreach ($services_list  as  $value) {
+
+                     ?>
                 <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-cog text-primary sr-icons fa-television" aria-hidden="true"></i>
+                        <?php echo $value[icon_font]; ?>
                         <h3>Ремонт компьютеров</h3>
                         <p class="text-muted">Бесплатная диагностика, поиск неисправностей в аппаратных и программных компонентов компьютеров или ноутбуков</p>
                     </div>
@@ -63,7 +86,15 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                     <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
                     <div class="linebottom"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
+                    <?php } } ?>
+<script >
+ // Добовление класа для блока услуги
+    jQuery('#services i').addClass('text-primary sr-icons');
+    // конец  
+</script>
+
+
+               <!--  <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
                         <i class="fa fa-4x fa-cog text-primary sr-icons fa-laptop" aria-hidden="true"></i>
                         <h3>Ремонт ноутбуков</h3>
@@ -108,14 +139,13 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                     </div>
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-           <!--  </div> -->
+                </div> -->
 
 
 
 
-            <!-- <div class="row"> -->
-                <div class="col-lg-4 col-md-6 text-center q1">
+
+                <!-- <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
                         <i class="fa fa-4x fa-list-alt text-primary sr-icons"></i>
                         <h3>Покупка</h3>
@@ -150,14 +180,14 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                     </div>
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-            <!-- </div> -->
+                </div> -->
 
 
 
 
-            <!-- <div class="row"> -->
-                <div class="col-lg-4 col-md-6 text-center q1">
+
+ 
+                <!-- <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
                         <h3>АутСорсинг</h3>
@@ -193,7 +223,7 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
                 </div>
-            </div>
+            </div> -->
 
 
 
@@ -222,9 +252,11 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
             <div class="row no-gutter popup-gallery">
 
                 <?php 
+                
                      
                      if($our_advantages){
                         foreach ($our_advantages as  $value) {
+                    
                 ?>
 
                  <div class="col-lg-3 col-sm-3">                    
@@ -270,8 +302,8 @@ $description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv'
 <?php } ?>
 
       <!-- ОТЗЫВЫ -->
-
-      <section id="testimonialTabs" class="row contentRowPad">
+        <?php $photo_fon_block = get_post_meta( $post->ID, 'photo_fon_block', true); ?>
+      <section id="testimonialTabs" style="background:url('<?php echo $photo_fon_block ?>') repeat scroll 0 0" class="row contentRowPad">
         <div class="container">
             <?php 
                 $name_block_mnenie = get_post_meta( $post->ID, 'name_block_mnenie', true);
@@ -295,6 +327,7 @@ $description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv'
                 <ul class="nav nav-tabs" role="tablist" id="testiTab">
                 <?php 
                 $setings_list_mnenie = get_post_meta( $post->ID, 'setings_list_mnenie', true);
+                if($setings_list_mnenie){
                 foreach ($setings_list_mnenie as $key => $val) {
                        
              ?>
@@ -316,6 +349,7 @@ $description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv'
                     </div>
                     <?php } ?>
                 </div>
+                <?php } ?>
 
 
 
@@ -325,10 +359,7 @@ $description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv'
 
 
 
-<script >
-    jQuery('.my_class_none').first().addClass('active');
-    jQuery('.tab-pane').first().addClass('active');
-</script>
+
 
 
 

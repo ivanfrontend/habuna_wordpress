@@ -49,6 +49,11 @@
         });
         return false;
     });
+    // добовление класса для блока отзывы
+    jQuery('.my_class_none').first().addClass('active');
+    jQuery('.tab-pane').first().addClass('active');
+    // конец
+
+    
 });
-$('.my_class_none').last().addClass('active');
-console.log('qwwrwerwetew');
+ 

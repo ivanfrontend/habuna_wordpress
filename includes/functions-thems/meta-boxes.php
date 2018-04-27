@@ -52,6 +52,46 @@ function custom_meta_boxes() {
 
 
 
+
+   array(
+        'label'       => 'Настройка блока услуги',
+        'id'          => 'section_blok1_1_tab',
+        'type'        => 'tab'
+      ),
+                     array(
+        'id'          => 'background_block',
+        'label'       => 'укажите свет фона',
+        'desc'        => '',
+        'type'        => 'background',
+      ),
+                         
+                             array(
+        'id'          => 'text_title_blok1_1',
+        'label'       => 'Название блока',
+        'desc'        => 'Укажите название блока, например: Мы предлагаем следующие услуги',
+        'type'        => 'text',
+      ), 
+                              array(
+        'id'          => 'services_list',
+        'label'       => 'Добовление услуги',
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'settings'    => array(
+            array(
+        'id'          => 'icon_font',
+        'label'       => 'Добавить иконку',
+        'desc'        => 'Весь перечень иконок <a href="https://fontawesome.ru/all-icons/">тут</a>',
+        'type'        => 'text',
+      ), 
+
+         ),
+    
+            ),
+
+
+
+
         array(
         'label'       => 'Настройки блока наши приемущества',
         'id'          => 'section_blok2_tab',
@@ -126,6 +166,12 @@ function custom_meta_boxes() {
         'type'        => 'tab'
       ), 
 
+                               array(
+        'id'          => 'photo_fon_block',
+        'label'       => 'Загрузите фон блока',
+        'desc'        => '',
+        'type'        => 'upload',
+      ), 
                     array(
         'id'          => 'name_block_mnenie',
         'label'       => 'Название блока',
@@ -170,157 +216,6 @@ function custom_meta_boxes() {
     
             ),
 
-
-
-     
-
-           array(
-        'label'       => 'Посмотреть все акции',
-        'id'          => 'all_shares_tab',
-        'type'        => 'tab'
-      ),
-              array(
-        'id'          => 'bg_img_shares',
-        'label'       => 'Загрузить фоновую картинку',
-        'desc'        => '',
-        'type'        => 'upload',
-      ),
-            array(
-        'id'          => 'text_shares',
-        'label'       => 'текст в блоке',
-        'desc'        => '',
-        'type'        => 'text',
-      ),
-               array(
-        'id'          => 'link_shares',
-        'label'       => 'Ссылка на страницу акции',
-        'desc'        => '',
-        'type'        => 'text',
-      ),
-
-          array(
-        'label'       => '4-новости',
-        'id'          => 'post_tab',
-        'type'        => 'tab'
-      ),
-          array(
-        'id'          => 'post_select1',
-        'label'       => 'Выберите пост 1-го блока',
-        'desc'        => '',
-        'type'        => 'post-select',
-      ),
-             array(
-        'id'          => 'img_select1',
-        'label'       => 'Загрузите картинку',
-        'desc'        => '',
-        'type'        => 'upload',
-      ),
-                array(
-        'id'          => 'post_select2',
-        'label'       => 'Выберите пост 2-го блока',
-        'desc'        => '',
-        'type'        => 'post-select',
-      ),
-             array(
-        'id'          => 'img_select2',
-        'label'       => 'Загрузите картинку',
-        'desc'        => '',
-        'type'        => 'upload',
-      ),
-                     array(
-        'id'          => 'post_select3',
-        'label'       => 'Выберите пост 3-го блока',
-        'desc'        => '',
-        'type'        => 'post-select',
-      ),
-             array(
-        'id'          => 'img_select3',
-        'label'       => 'Загрузите картинку',
-        'desc'        => '',
-        'type'        => 'upload',
-      ),
-                     array(
-        'id'          => 'post_select4',
-        'label'       => 'Выберите пост 4-го блока',
-        'desc'        => '',
-        'type'        => 'post-select',
-      ),
-             array(
-        'id'          => 'img_select4',
-        'label'       => 'Загрузите картинку',
-        'desc'        => '',
-        'type'        => 'upload',
-      ),
-                   array(
-        'id'          => 'all-staid-battan11',
-        'label'       => 'ссылка на страницу статей "Больше интересной информации"',
-        'desc'        => '',
-        'type'        => 'text',
-      ),
-                       array(
-        'label'       => 'Карта наши магазины',
-        'id'          => 'map-all-shop',
-        'type'        => 'tab'
-      ),
-                       array(
-        'id'          => 'js-map-all-shop',
-        'label'       => 'Вставьте код',
-        'desc'        => '',
-        'type'        => 'textarea',
-      ),  
-
-
-        array(
-        'label'       => 'Настройки банера',
-        'id'          => 'setings-baner',
-        'type'        => 'tab'
-      ),  
-
-       array(
-        'id'          => 'img-baner',
-        'label'       => 'Загрузите картинку',
-        'desc'        => '',
-        'type'        => 'upload',
-      ), 
-               array(
-        'label'       => 'Текст банера',
-        'id'          => 'text-baner',
-        'type'        => 'text'
-      ), 
-
-         array(
-        'label'       => 'Ссылка на страницу акции',
-        'id'          => 'link-baner',
-        'type'        => 'text'
-      ), 
-        array(
-        'label'       => 'Как изготавливают очки',
-        'id'          => 'praktik',
-        'type'        => 'tab'
-      ),
-                   array(
-        'id'          => 'praktik-blok',
-        'label'       => 'Вставьте код или текст',
-        'desc'        => 'Для создания заголовка используйте тег "h2". Остальной контент необходимо обернуть в тег "p"',
-        'type'        => 'textarea',
-      ),
-        array(
-        'label'       => 'SEO',
-        'id'          => 'seo_home',
-        'type'        => 'tab'
-      ),
-                 array(
-        'id'          => 'title-home',
-        'label'       => 'Ведите title страницы',
-        'desc'        => '',
-        'type'        => 'text',
-      ),
-                          array(
-        'id'          => 'description-home',
-        'label'       => 'Ведите description страницы',
-        'desc'        => '',
-        'type'        => 'text',
-      ),
 
             ),
        );
