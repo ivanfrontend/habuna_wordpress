@@ -1,18 +1,18 @@
-﻿$(document).ready(function () {
-    $('.master').tooltip();
+﻿jQuery(document).ready(function () {
+    jQuery('.master').tooltip();
 
-    $('form').submit(function () {
+    jQuery('form').submit(function () {
         debugger;
         // Получение ID формы
-        var formID = $(this).attr('id');
+        var formID = jQuery(this).attr('id');
         // Добавление решётки к имени ID
-        var formNm = $('#' + formID);
+        var formNm = jQuery('#' + formID);
 
         formNm.attr('novalidate', 'novalidate');
 
-        var nameInput = $('#name');
-        var phoneInput = $('#phone');
-        var phoneReg = new RegExp('^[+]?[0-9]+-?[0-9]+$', 'gi');
+        var nameInput = jQuery('#name');
+        var phoneInput = jQuery('#phone');
+        var phoneReg = new RegExp('^[+]?[0-9]+-?[0-9]+jQuery', 'gi');
         
         if (nameInput.val() == '') {
             alert('Пожалуйста, введите имя');
@@ -23,12 +23,12 @@
             phoneInput.focus();
             return false;
         } else if (phoneReg.test(phoneInput.val()) === false) {
-            $('#wrongPhone').show();
+            jQuery('#wrongPhone').show();
             phoneInput.focus();
             return false;
         }
         else {
-            $('#wrongPhone').hide();
+            jQuery('#wrongPhone').hide();
         }
 
 
@@ -37,10 +37,10 @@
             url: 'send.php',
             data: formNm.serialize(),
             success: function (data) {
-                $(nameInput).val('');
-                $(phoneInput).val('');                
+                jQuery(nameInput).val('');
+                jQuery(phoneInput).val('');                
                 alert("СПАСИБО! ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА! В БЛИЖАЙШЕЕ ВРЕМЯ С ВАМИ СВЯЖЕТСЯ КОНСУЛЬТАНТ!");
-                $('#myModal').modal('hide');
+                jQuery('#myModal').modal('hide');
             },
             error: function (jqXHR, text, error) {
                 // Вывод текста ошибки отправки
@@ -55,7 +55,7 @@ var slaids;
 var widthBody;
 var heitBlock
 
-     widthBody = $('body').width();
+     widthBody = jQuery('body').width();
 
     if(widthBody > 1200){
     slaids = 5;
@@ -71,7 +71,7 @@ var heitBlock
       slaids =1;  
     }
 
-$('.wrap_main').slick({
+jQuery('.wrap_main').slick({
         dots: false,
         autoplay: false,
         autoplaySpeed: 3000,
@@ -81,12 +81,12 @@ $('.wrap_main').slick({
         prevArrow: '<img class="lefts" src="img/backward.png">',  // стрелки
         nextArrow: '<img class="righets" src="img/before.png">'  // стрелки
     });
-heitBlock = $('.wrap_main div img').width();
-$('.wrap_main div img').css({'height':heitBlock});
+heitBlock = jQuery('.wrap_main div img').width();
+jQuery('.wrap_main div img').css({'height':heitBlock});
 console.log(heitBlock);
 
 
-$('.main_two').slick({
+jQuery('.main_two').slick({
         dots: true,
         autoplay: false,
         autoplaySpeed: 3000,
@@ -96,8 +96,8 @@ $('.main_two').slick({
         // prevArrow: '<img class="lefts" src="images/lefts.png">',  // стрелки
         // nextArrow: '<img class="righets" src="images/righets.png">'  // стрелки
     });
-$('.burger').on('click', function(){
-    $('.menu_top').slideToggle();
+jQuery('.burger').on('click', function(){
+    jQuery('.menu_top').slideToggle();
 });
 
 var heit = jQuery('#mainNav').height();
