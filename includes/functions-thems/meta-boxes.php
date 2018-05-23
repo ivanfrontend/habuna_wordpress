@@ -32,7 +32,7 @@ function custom_meta_boxes() {
 
 
          array(
-        'label'       => 'Настройка блока Скидка',
+        'label'       => 'Блок с ссылкой на основной сайт',
         'id'          => 'section_blok1_tab',
         'type'        => 'tab'
       ),
@@ -40,15 +40,21 @@ function custom_meta_boxes() {
                 array(
         'id'          => 'text_title_blok1',
         'label'       => 'Название блока',
-        'desc'        => 'Укажите название блока, например: Скидки',
+        'desc'        => '',
         'type'        => 'text',
       ), 
                          array(
         'id'          => 'text_blok1',
-        'label'       => 'Текст акции',
+        'label'       => 'описание',
         'desc'        => '',
         'type'        => 'textarea',
       ), 
+                         array(
+        'id'          => 'text_title_blok1_link',
+        'label'       => 'ссылка на сайт',
+        'desc'        => '',
+        'type'        => 'text',
+      ),
 
 
 

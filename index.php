@@ -12,10 +12,14 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center text-center">
+                    <?php
+                     // if(ot_get_option('primer')||){ 
+                        ?>
                     <h2 class="section-heading"><a class="section-heading hov_for_1z" href="http://1z.by/">1Z.BY</a></h2>
                     <hr class="light">
                     <p class="text-faded" style="font-size:18px;">Наш интернет-магазин в котором вы найдете все необходимые комплектующие для вашего компьютера!</p>
                     <a href="http://1z.by/" target="_blank" class="btn btn-default btn-xl sr-button my_button_zakaz" >Перейти</a>
+                    <?php // } ?>
                 </div>
             </div>
         </div>
@@ -236,25 +240,6 @@ get_header();
                         <h4>Безналичный НДС-ЭСЧФ</h4>
                     </div>
                 </div>
-
-                <!-- <div class="col-xs-12">
-                    <p class="bg-form-text" >Оставьте заявку и мы обязательно с Вами свяжемся.</p>
-                </div> -->
-                <!-- <div class="col-xs-12">
-                    <div class="bg-form-input" >
-                        <div>
-                            <input placeholder="Ваше имя"  type="text">
-                        </div>
-                        <div>
-                            <input placeholder="Ваш телефон" type="text">
-                        </div>
-                        <div>
-                            <textarea rows="5" cols="30" placeholder="Напишите, что вас интересует."></textarea>
-                        </div>
-                        
-                        <button>Отправить</button>
-                    </div> 
-                </div> -->
                 
             </div>
         </div>
@@ -395,10 +380,25 @@ get_header();
                     <!-- <p>Ассоциация Компьютерных Мастеров</p> -->
                 </div>
                 <div class="col-lg-12 text-center">
-                    <a class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal" style=" box-shadow: inset 0 3px 5px rgba(0,0,0,0); margin-left: 10px; font-size:16px;"><i class="fa fa-envelope-o fa-3x sr-contact"></i><br />Отправить заявку</a>                    
-                    <a class="btn btn-xl sr-button" href="tel:+375298488855" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />+375 (29) 848-88-55</a>                                        
-                    <a class="btn btn-xl sr-button" href="tel:+375296276977" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />+375 (29) 627-69-77</a>
-                    <a class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-map-marker fa-3x sr-contact" aria-hidden="true"></i><br />п-р Партизанский 8.,<br /> корп. 15 ком. 104.</a>                                          
+                    <?php if(ot_get_option('email_adres')) {
+                            ?>  
+                    <a class="btn btn-xl sr-button" href="mailto:<?php echo ot_get_option('email_adres'); ?>" style=" box-shadow: inset 0 3px 5px rgba(0,0,0,0); margin-left: 10px; font-size:16px;"><i class="fa fa-envelope-o fa-3x sr-contact"></i><br /><?php echo ot_get_option('email_adres'); ?></a>
+                    <?php } ?>
+                    <?php if(ot_get_option('phone-header1')) {
+                            $str = ot_get_option('phone-header1');
+                        $result = preg_replace("/[^,.0-9]/", '', $str);
+                            ?>                  
+                    <a class="btn btn-xl sr-button" href="tel:+<?php echo $result ?>" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br /><?php echo ot_get_option('phone-header1'); ?></a>
+                    <?php } ?> 
+                     <?php if(ot_get_option('phone-header2')) {
+                            $str2 = ot_get_option('phone-header2');
+                        $result2 = preg_replace("/[^,.0-9]/", '', $str2);
+                            ?>                                         
+                    <a class="btn btn-xl sr-button" href="tel:+<?php echo $result2 ?>" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br /><?php echo ot_get_option('phone-header2') ?></a>
+                    <?php } ?>
+                     <?php if(ot_get_option('legal_adres')) {
+                            ?> 
+                    <a class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px; white-space: normal; width: 224px;"><i class="fa fa-map-marker fa-3x sr-contact" aria-hidden="true"></i><br /><?php echo ot_get_option('legal_adres'); ?></a>  <?php } ?>                                        
                 </div>
             </div>
         </div>

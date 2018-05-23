@@ -42,7 +42,10 @@ function custom_theme_options() {
         'id'          => 'header',
         'title'       => 'настройка шапки сайта'
       ),
-
+array(
+        'id'          => 'setings_map',
+        'title'       => 'Настройки карты'
+      ),
 
             array(
         'id'          => 'footer',
@@ -54,21 +57,21 @@ function custom_theme_options() {
       ),
     ),
     'settings'        => array(
-                        array(
-        'id'          => 'Settings_header',
-        'label'       => 'Настройки шапки сайта ',
-        'desc'        => '',
-        'type'        => 'tab',
-        'section'     => 'header',
-      ),
-                           array(
-        'id'          => 'name_phone_section',
-        'label'       => 'Название',
-        'desc'        => 'Название блока в шапке сайта пример: Вызвать мастера:. Будет выводиться перед номерами телефонов.',
-        'std'         => '',
-        'type'        => 'text',
-        'section'     => 'header',
-      ),
+      //                   array(
+      //   'id'          => 'Settings_header',
+      //   'label'       => 'Настройки шапки сайта ',
+      //   'desc'        => '',
+      //   'type'        => 'tab',
+      //   'section'     => 'header',
+      // ),
+      //                      array(
+      //   'id'          => 'name_phone_section',
+      //   'label'       => 'Название',
+      //   'desc'        => 'Название блока в шапке сайта пример: Вызвать мастера:. Будет выводиться перед номерами телефонов.',
+      //   'std'         => '',
+      //   'type'        => 'text',
+      //   'section'     => 'header',
+      // ),
         
 
                         array(
@@ -111,7 +114,7 @@ function custom_theme_options() {
         'label'       => 'настройки Карты',
         'desc'        => '',
         'type'        => 'tab',
-        'section'     => 'footer',
+        'section'     => 'setings_map',
       ),
                          array(
         'id'          => 'lat',
@@ -119,7 +122,7 @@ function custom_theme_options() {
         'desc'        => 'Данная настройка работает с google.map. Пример ввода Широты: 53.88273453.',
         'std'         => '',
         'type'        => 'text',
-        'section'     => 'footer',
+        'section'     => 'setings_map',
       ),
                          array(
         'id'          => 'lng',
@@ -127,7 +130,7 @@ function custom_theme_options() {
         'desc'        => 'Данная настройка работает с google.map. Пример ввода долготы: 27.58976331.',
         'std'         => '',
         'type'        => 'text',
-        'section'     => 'footer',
+        'section'     => 'setings_map',
       ),
       
                         array(
@@ -179,15 +182,49 @@ function custom_theme_options() {
         'type'        => 'text',
         'section'     => 'setings_contacts',
       ), 
+                      array(
+        'id'          => 'time_worck',
+        'label'       => 'Время работы',
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'text',
+        'section'     => 'setings_contacts',
+      ),
                              array(
         'id'          => 'legal_adres',
         'label'       => 'Юредический адрес',
         'desc'        => '',
         'std'         => '',
-        'type'        => 'textarea',
+        'type'        => 'text',
         'section'     => 'setings_contacts',
       ), 
 
+
+                      array(
+        'id'          => 'social_network_list',
+        'label'       => 'соц. сети',
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'section'     => 'setings_contacts',
+        'settings'    => array( 
+ 
+          array(
+            'id'          => 'social_network_upload',
+            'label'       => 'вставьте class',
+            'desc'        => 'например: telegram, viber, skype',
+            'type'        => 'text',
+          ),
+          array(
+            'id'          => 'social_network_link',
+            'label'       => 'Укажите номер или nickname',
+            'desc'        => '',
+            'type'        => 'text',
+          ),
+
+        )
+
+      ),
 
 
 
