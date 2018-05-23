@@ -1,4 +1,115 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ремонт компьютерoв и ноутбуков в Минске</title>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top">
+    <div class="wrapp_global_top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-3 paddding_bottom10px mobile_logo">
+                  <span class="masterNone color_logo">Dialrus</span>
+                  <span class="logo_desc">компьютерный сервис</span>  
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 paddding_bottom10px mobail_ok">
+                    <div class="wrapp_social">
+                        <a href=""><span class="telegram"></span></a>
+                        <a href=""><span class="viber"></span></a>
+                        <a href=""><span class="skype"></span></a>
+                    </div>     
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 paddding_bottom10px mobile_info">
+                    <div class="wrapp_header_contact">
+                        <div class="header_contact">
+                            <span class="title_phone">Наши контакты:</span>
+                            <span class="namber_phone"><a href="tel:+375296276977"><i class="fa fa-phone" aria-hidden="true"></i>+375 (29) 627-69-77</a></span>
+                            <span class="namber_phone"><a href="tel:+375298488855"><i class="fa fa-phone" aria-hidden="true"></i>+375 (29) 848-88-55</a></span>
+                            <div>График работы: 10:00 - 18:00 пн - пт / п-р Партизанский 8.,корп. 15 ком. 104.</div>
+                        </div>
+
+                        <span class="burger">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </div>    
+                </div>
+                <div class="col-xs-6 col-sm-1 col-md-1 block_btn_top">
+                    <a href="" class="my_btn_top" data-toggle="modal" data-target="#myModal">Заказать</a>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 paddding_bottom10px mobail_none">
+                    <div class="wrapp_social">
+                        <a href=""><span class="telegram"></span></a>
+                        <a href=""><span class="viber"></span></a>
+                        <a href=""><span class="skype"></span></a>
+                    </div>     
+                </div>
+            </div>
+        </div>
+        <section class="menu_top">
+            <div class="container">
+                <div class="row">
+                   <div class="col-xs-12 ">
+                        <ul class="wrap_ul_menu">
+                            <li>
+                                <a class="page-scroll" href="#about">Наш магазин</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#services">Услуги</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#profi_room">Наша мастерская</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#pay">Способы оплаты</a>
+                            </li>
+                            
+                            <li>
+                                <a class="page-scroll" href="#my_portfolio">Наши работы</a>
+                            </li> 
+                            <li>
+                                <a class="page-scroll" href="#reviewsabout">Отзывы</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#contact">Контакты</a>
+                            </li>                    
+                        </ul> 
+                   </div>              
+                </div>
+            </div>
+        </section>
+    </nav>
+</div>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Ремонт компьютеров и ноутбуков в Минске</h1>                
+                <hr class="hr_color_fff">
+                <p>Мы предоставляем качественный, быстрый и не дорогой сервис по обслуживанию компьютеров и ноутбуков</p>
+                <a href="#about" class="my_style_btn btn btn-primary btn-xl page-scroll">Далее</a>
+            </div>
+        </div>
+    </header>
+
+
+
+
+<!-- Старый header -->
+<!DOCTYPE html>
 <html lang="ru-RU">
 <head>
     <meta charset="utf-8">
@@ -116,57 +227,3 @@
         </div>
     </header>
 
-
-
-
-
-
-
-
-<!-- <!doctype html>
-<html ru-RU>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-
-	
-</head>
-
-<body>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'shabuna' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$shabuna_description = get_bloginfo( 'description', 'display' );
-			if ( $shabuna_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $shabuna_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'shabuna' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav>
-	</header>
-
-	<div id="content" class="site-content">
- -->

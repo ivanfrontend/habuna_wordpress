@@ -60,8 +60,8 @@ function custom_meta_boxes() {
       ),
                      array(
         'id'          => 'background_block',
-        'label'       => 'укажите свет фона',
-        'desc'        => '',
+        'label'       => 'укажите фона',
+        'desc'        => 'Можно прапустить эту настройку',
         'type'        => 'background',
       ),
                          
