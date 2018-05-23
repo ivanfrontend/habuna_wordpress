@@ -47,11 +47,15 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
         }
         ?>
         <?php
+        if($background_block){
             if( empty( $bg_mass[5] ) ){
+        
         ?>              
     <section style="background:<?php echo $bg_mass[0]; ?>" id="services">
         <?php }else{ ?>
         <section style="background-repeat: <?php echo $bg_mass[1] ?>;background-position: <?php echo $bg_mass[3] ?> ; background-size: <?php echo $bg_mass[4] ?>; background:url( <?php echo $bg_mass[5]; ?>);" id="services">
+            <?php } }else{ ?>
+            <section  id="services">
             <?php } ?>
         <div class="container">
             <div class="row">
