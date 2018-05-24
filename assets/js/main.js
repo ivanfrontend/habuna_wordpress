@@ -78,8 +78,8 @@ jQuery('.wrap_main').slick({
 //         // infinite: true,
         slidesToShow: slaids,
         slidesToScroll: 1,
-        prevArrow: '<img class="lefts" src="img/backward.png">',  // стрелки
-        nextArrow: '<img class="righets" src="img/before.png">'  // стрелки
+        prevArrow: '<img class="lefts" src="http://shabuna/wp-content/themes/shabuna/assets/img/backward.png">',  // стрелки
+        nextArrow: '<img class="righets" src="http://shabuna/wp-content/themes/shabuna/assets/img/before.png">'  // стрелки
     });
 heitBlock = jQuery('.wrap_main div img').width();
 jQuery('.wrap_main div img').css({'height':heitBlock});
@@ -104,3 +104,11 @@ var heit = jQuery('#mainNav').height();
 jQuery('.wrapp_global_top').css({"height":heit});
 
 jQuery('.wrap_ul_menu').find('a').addClass('page-scroll');
+
+jQuery(function(){
+  var tab_content = jQuery('.tab-content');
+  tab_content.find('.tab-pane:first').addClass('active');
+
+  var wrapp_tabs = jQuery('.wrapp_tabs');
+  wrapp_tabs.find('li:first').addClass('active');
+});

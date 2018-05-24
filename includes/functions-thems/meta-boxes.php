@@ -64,12 +64,6 @@ function custom_meta_boxes() {
         'id'          => 'section_blok1_1_tab',
         'type'        => 'tab'
       ),
-                     array(
-        'id'          => 'background_block',
-        'label'       => 'укажите фона',
-        'desc'        => 'Можно прапустить эту настройку',
-        'type'        => 'background',
-      ),
                          
                              array(
         'id'          => 'text_title_blok1_1',
@@ -90,6 +84,55 @@ function custom_meta_boxes() {
         'desc'        => 'Весь перечень иконок <a href="https://fontawesome.ru/all-icons/">тут</a>',
         'type'        => 'text',
       ), 
+             array(
+        'id'          => 'name_servises_list',
+        'label'       => 'Название услуги',
+        'desc'        => '',
+        'type'        => 'text',
+      ), 
+              array(
+        'id'          => 'deck_servises_list',
+        'label'       => 'описание услуги',
+        'desc'        => '',
+        'type'        => 'text',
+      ), 
+              array(
+        'id'          => 'pris_servises_list',
+        'label'       => 'укажите цену',
+        'desc'        => '',
+        'type'        => 'text',
+      ),
+
+         ),
+    
+            ),
+
+      array(
+        'label'       => 'Настройка блока наша мастерская',
+        'id'          => 'servis_room_tab',
+        'type'        => 'tab'
+      ),
+
+      array(
+        'id'          => 'name_block_servis_room',
+        'label'       => 'Название',
+        'desc'        => '',
+        'type'        => 'text',
+      ),
+
+      array(
+        'id'          => 'servis_room',
+        'label'       => 'Добовление слайд с фото мастерской',
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'settings'    => array(
+            array(
+        'id'          => 'photo_servis_room',
+        'label'       => 'Загрузите картинку',
+        'desc'        => '',
+        'type'        => 'upload',
+      ),
 
          ),
     
@@ -103,38 +146,39 @@ function custom_meta_boxes() {
         'id'          => 'section_blok2_tab',
         'type'        => 'tab'
       ),
-                          array(
+                         
+                             array(
         'id'          => 'name_block_advantages',
         'label'       => 'Название блока',
         'desc'        => '',
         'type'        => 'text',
-      ),
-        array(
-        'id'          => 'Our_advantages',
-        'label'       => 'наши приемущества',
+      ), 
+                              array(
+        'id'          => 'add_advantages',
+        'label'       => 'Добавить преимущество',
         'desc'        => '',
         'std'         => '',
         'type'        => 'list-item',
         'settings'    => array(
-          
-                array(
-        'id'          => 'ord_title',
-        'label'       => 'Заголовок приемущества',
+            array(
+        'id'          => 'icon_advantages',
+        'label'       => 'Добавить иконку',
+        'desc'        => 'Весь перечень иконок <a href="https://fontawesome.ru/all-icons/">тут</a>',
+        'type'        => 'text',
+      ), 
+             array(
+        'id'          => 'name_advantages',
+        'label'       => 'Название преимущество',
         'desc'        => '',
         'type'        => 'text',
-      ),
-                         array(
-        'id'          => 'ord_description',
-        'label'       => 'Текст приемущества',
+      ), 
+              array(
+        'id'          => 'deck_advantages',
+        'label'       => 'описание преимущество',
         'desc'        => '',
-        'type'        => 'textarea',
-      ),
-                   array(
-        'id'          => 'Our_upload_fon',
-        'label'       => 'Загрузите фоновую картинку',
-        'desc'        => '',
-        'type'        => 'upload',
-      ),
+        'type'        => 'text',
+      ), 
+
          ),
     
             ),

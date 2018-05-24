@@ -85,6 +85,9 @@
                         <?php  if($value[social_network_upload] == 'skype'){ ?>
                         <a href="skype:<?php echo  $value[social_network_link]; ?>?chat"><span class="<?php echo $value[social_network_upload]; ?>"></span></a>
                         <?php } ?>
+                        <?php  if($value[social_network_upload] == 'whatsapp'){ ?>
+                        <a href="skype:<?php echo  $value[social_network_link]; ?>?chat"><span class="<?php echo $value[social_network_upload]; ?>"></span></a>
+                        <?php } ?>
                         <!-- <a href=""><span class="viber"></span></a>
                         <a href=""><span class="skype"></span></a> -->
                         <?php } }  ?>
@@ -96,30 +99,6 @@
             <div class="container">
                 <div class="row">
                    <div class="col-xs-12 ">
-                        <!-- <ul class="wrap_ul_menu">
-                            <li>
-                                <a class="page-scroll" href="#about">Наш магазин</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="#services">Услуги</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="#profi_room">Наша мастерская</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="#pay">Способы оплаты</a>
-                            </li>
-                            
-                            <li>
-                                <a class="page-scroll" href="#my_portfolio">Наши работы</a>
-                            </li> 
-                            <li>
-                                <a class="page-scroll" href="#reviewsabout">Отзывы</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="#contact">Контакты</a>
-                            </li>                    
-                        </ul> --> 
                         <?php
                                         wp_nav_menu(array(
                   'menu'            => 'primary', 

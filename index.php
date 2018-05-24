@@ -13,13 +13,16 @@ get_header();
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center text-center">
                     <?php
-                     // if(ot_get_option('primer')||){ 
+                    $text_title_blok1 = get_post_meta( $post->ID, 'text_title_blok1', true);
+                    $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
+                    $text_title_blok1_link = get_post_meta( $post->ID, 'text_title_blok1_link', true);
+                     if( $text_title_blok1 || $text_blok1 || $text_title_blok1_link){ 
                         ?>
-                    <h2 class="section-heading"><a class="section-heading hov_for_1z" href="http://1z.by/">1Z.BY</a></h2>
+                    <h2 class="section-heading"><a class="section-heading hov_for_1z" href="<?php echo $text_title_blok1_link ?>"><?php echo $text_title_blok1 ?></a></h2>
                     <hr class="light">
-                    <p class="text-faded" style="font-size:18px;">Наш интернет-магазин в котором вы найдете все необходимые комплектующие для вашего компьютера!</p>
-                    <a href="http://1z.by/" target="_blank" class="btn btn-default btn-xl sr-button my_button_zakaz" >Перейти</a>
-                    <?php // } ?>
+                    <p class="text-faded" style="font-size:18px;"><?php echo $text_blok1 ?></p>
+                    <a href="<?php echo $text_title_blok1_link ?>" target="_blank" class="btn btn-default btn-xl sr-button my_button_zakaz" >Перейти</a>
+                    <?php  } ?>
                 </div>
             </div>
         </div>
@@ -53,7 +56,10 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Мы предлагаем следующие услуги</h2>
+                     <?php $text_title_blok1_1 = get_post_meta( $post->ID, 'text_title_blok1_1', true); ?>
+                    <?php if($text_title_blok1_1 ){ ?>
+                    <h2 class="section-heading"><?php echo $text_title_blok1_1 ?></h2>
+                    <?php } ?>
                     <hr class="primary">
                 </div>
             </div>
@@ -63,69 +69,34 @@ get_header();
 
 
             <div class="row my_heit">
+
+                <?php 
+                    $services_list = get_post_meta( $post->ID, 'services_list', true);
+                        if($services_list){
+                            foreach ($services_list  as  $value) {
+
+                     ?>
                 <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-cog text-primary sr-icons fa-television" aria-hidden="true"></i>
-                        <h3>Ремонт компьютеров</h3>
-                        <p class="text-muted">Бесплатная диагностика и поиск неисправностей </p>
+                        <?php echo $value[icon_font]; ?>
+                        <h3><?php echo $value[name_servises_list]; ?></h3>
+                        <p class="text-muted"><?php echo $value[deck_servises_list]; ?></p>
                     </div>
-                    <p class=" prise_servis"> от 25 руб</p>
+                    <p class=" prise_servis"> <?php echo $value[pris_servises_list]; ?></p>
                     <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
                     <div class="linebottom"></div>
                 </div>
-
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-cog text-primary sr-icons"></i>
-                        <h3>Диагностика неисправностей</h3>
-                        <p class="text-muted">Бесплатная диагностика ипоиск неисправностей </p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-search text-primary sr-icons"></i>
-                        <h3>Профилактика</h3>
-                        <p class="text-muted">Проверка компонентов компьютера или ноутбука </p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-wrench text-primary sr-icons"></i>
-                        <h3>Ремонт</h3>
-                        <p class="text-muted">Мелкий ремонт, замена устройств, ремонт комьютеров, ремонт ноутбуков</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-eraser text-primary sr-icons"></i>
-                        <h3>Уборка</h3>
-                        <p class="text-muted">Чистка компьютеров или ноутбуков от пыли, смазка вентиляторов, замена термопасты</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-indent text-primary sr-icons"></i>
-                        <h3>Восстановление</h3>
-                        <p class="text-muted">Диагностика восстановление файлов с жестких и съемных носителей информации</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-              
-
-
+                    <?php } } ?>
+                <script >
+                 // Добовление класа для блока услуги
+                    jQuery('#services i').addClass('text-primary sr-icons');
+                    // конец  
+                </script>
         </div>
     </section>
 
+        </div>
+    </section>
         </div>
     </section>
     <div id="profi_room" class="global"></div>
@@ -133,111 +104,66 @@ get_header();
        <div class="container-fluid">
            <div class="row">
                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Наша мастерская</h2>
+                <?php
+                $name_block_servis_room = get_post_meta( $post->ID, 'name_block_servis_room', true);
+                    if($name_block_servis_room){
+                 ?>
+                    <h2 class="section-heading"><?php echo $name_block_servis_room ?></h2>
+                    <?php } ?>
                     <hr class="primary">
                 </div>
                 </div>
                 <div class="col-lg-12">
                 <div class="wrap_main">
+                    <?php 
+                    $servis_room = get_post_meta( $post->ID, 'servis_room', true);
+                    if($servis_room){
+                        foreach ($servis_room as $value) {
+                    ?>
                     <div>
-                        <img src="img/room/2.png">
+                        <img src="<?php echo $value[photo_servis_room]; ?>">
                     </div>
-                    <div>
-                        <img src="img/room/2.png">
-                    </div>
-                    <div>
-                        <img src="img/room/3.png">
-                    </div>
-                    <div>
-                        <img src="img/room/4.png">
-                    </div>
-                    <div>
-                        <img src="img/room/5.png">
-                    </div>
-                    <div>
-                        <img src="img/room/5.png">
-                    </div>
-                    <div>
-                        <img src="img/room/2.png">
-                    </div>
-                    <div>
-                        <img src="img/room/3.png">
-                    </div>
+                    <?php } } ?>
+                   
                </div>
            </div>
        </div> 
     </section>
-    <!-- <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">По статистике 1 из 10</h2>
-                    <hr class="light">
-                    <p class="text-faded2">
-                       поломок вашего устройста решается по телефону с нашим консультантом    
-                    </p>
-                    <a href="" class="descktop_block btn btn-default btn-xl sr-button my_button_zakaz  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Закажите консультацию</a>
-                    <a href="tel:+375298488855" class=" mobile_phone btn btn-default btn-xl sr-button my_button_zakaz" >Звоните</a>
-                </div>
-            </div>
-        </div>
-    </aside> -->
     <div id="portfolio" class="global"></div>
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Наши приемущества</h2>
+                    <?php 
+                        $name_block_advantages = get_post_meta( $post->ID, 'name_block_advantages', true);
+                    if($name_block_advantages){
+                     ?>
+                    <h2 class="section-heading"><?php echo $name_block_advantages ?></h2>
+                    <?php } ?>
                     <hr class="primary">
                 </div>
             </div>
         </div>
           <div class="container">
             <div class="row">
+                <?php 
+                        $add_advantages = get_post_meta( $post->ID, 'add_advantages', true);
+                    if($add_advantages){
+                        foreach ($add_advantages as $value) {
+                          
+                     ?>
                 <div class="col-lg-3 col-md-6">
                         <div class="icon_heading">
-                           <i class="fa fa-subway" aria-hidden="true"></i>
+                          <?php echo $value[icon_advantages]; ?>
                         </div>
                         <div class="heading_title">
-                           Удобное расположение              
+                           <?php echo $value[name_advantages]; ?>             
                         </div> 
                         <div class="heading_text">
-                            Мы находимся в 5 минутах хотьбы от станции метро Пралетарская.
+                            <?php echo $value[deck_advantages]; ?>
                         </div>
                 </div> 
-                <div class="col-lg-3 col-md-6">
-                        <div class="icon_heading">
-                          <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-                        </div>
-                        <div class="heading_title">
-                            Вызов мастера на дом            
-                        </div> 
-                        <div class="heading_text">
-                            В нашей мастерской вы можете вызвать мастера на дом.
-                        </div>
-                </div> 
-                <div class="col-lg-3 col-md-6">
-                        <div class="icon_heading">
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="heading_title">
-                             Только качественная работа           
-                        </div> 
-                        <div class="heading_text">
-                            Восстановление данных, установка программ, чистка от пыли, и многое другое.  
-                        </div>
-                </div> 
-                <div class="col-lg-3 col-md-6">
-                        <div class="icon_heading">
-                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                        </div>
-                        <div class="heading_title">
-                            Модернизируем ваш компьютер              
-                        </div> 
-                        <div class="heading_text">
-                          Заберем ваши старые комплектующие взамен на новые при ремонтре вашего устройства у нас в мастерской. 
-                        </div>
-                </div>        
+                <?php } } ?>       
             </div>
         </div>
     </section>
@@ -356,7 +282,7 @@ get_header();
             <div class="row">
 
 
-                <ul class="nav nav-tabs" role="tablist" id="testiTab">
+                <ul class="nav nav-tabs wrapp_tabs" role="tablist" id="testiTab">
                 <?php 
                 $setings_list_mnenie = get_post_meta( $post->ID, 'setings_list_mnenie', true);
                 if($setings_list_mnenie){

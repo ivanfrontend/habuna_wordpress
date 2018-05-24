@@ -157,6 +157,20 @@
   	height: 32px;
   	transition: all 300ms ease-in-out;
 }
+.whatsapp{
+	background-image: url(../img/social/whatsappsprite.png);
+  	background-position: 0px 0px;
+  	width: 32px;
+ 	height: 32px;
+  	transition: all 300ms ease-in-out;
+}
+.whatsapp:hover{
+	background-image: url(../img/social/whatsappsprite.png);
+	background-position: -32px 0px;
+  	width: 32px;
+  	height: 32px;
+  	transition: all 300ms ease-in-out;
+}
 .paddding_bottom10px{
 	padding-bottom: 10px;
 }

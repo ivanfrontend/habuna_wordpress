@@ -212,7 +212,7 @@ array(
           array(
             'id'          => 'social_network_upload',
             'label'       => 'вставьте class',
-            'desc'        => 'например: telegram, viber, skype',
+            'desc'        => 'например: telegram, viber, skype, whatsapp',
             'type'        => 'text',
           ),
           array(
