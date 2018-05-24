@@ -44,8 +44,6 @@ add_action('after_setup_theme', 'shabuna_menu_setup');
 // Конец подключение меню
 
 
-
-
 // Подключение виджетов
 require get_template_directory() . '/includes/Widgets.php';
 // конец

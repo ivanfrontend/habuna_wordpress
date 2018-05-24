@@ -23,7 +23,14 @@
             </div>
         </div>
     </footer>  
+<<<<<<< HEAD
 <?php wp_footer(); ?>
 </body>
 </html>
+=======
+    <?php wp_footer(); ?>
+</body>
+</html>
+
+>>>>>>> 6b46c4bf1a385b1892358d08d8c33e65090f14f3
 

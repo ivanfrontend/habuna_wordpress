@@ -102,3 +102,5 @@ jQuery('.burger').on('click', function(){
 
 var heit = jQuery('#mainNav').height();
 jQuery('.wrapp_global_top').css({"height":heit});
+
+jQuery('.wrap_ul_menu').find('a').addClass('page-scroll');
