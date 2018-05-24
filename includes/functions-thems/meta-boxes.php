@@ -60,8 +60,8 @@ function custom_meta_boxes() {
       ),
                      array(
         'id'          => 'background_block',
-        'label'       => 'укажите свет фона',
-        'desc'        => '',
+        'label'       => 'укажите фона',
+        'desc'        => 'Можно прапустить эту настройку',
         'type'        => 'background',
       ),
                          
@@ -132,30 +132,6 @@ function custom_meta_boxes() {
          ),
     
             ),
-
-
-
-
-
-         array(
-        'label'       => 'Настройки блока объявления',
-        'id'          => 'section_blok3_tab',
-        'type'        => 'tab'
-      ), 
-                           array(
-        'id'          => 'name_block_priziv',
-        'label'       => 'Название блока',
-        'desc'        => '',
-        'type'        => 'text',
-      ), 
-                           array(
-        'id'          => 'description_block_priziv',
-        'label'       => 'Текст объявления',
-        'desc'        => '',
-        'type'        => 'textarea',
-      ), 
-
-
 
 
 

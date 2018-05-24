@@ -7,6 +7,7 @@ function wp_shabuna_scripts() {
 	wp_enqueue_script( 'scrollreveal', get_template_directory_uri().'/vendor/scrollreveal/scrollreveal.min.js',array(), '', true   );
 	wp_enqueue_script( 'popup', get_template_directory_uri() . '/vendor/magnific-popup/jquery.magnific-popup.min.js',array(  ), '', true  );
 	wp_enqueue_script( 'creative', get_template_directory_uri() . '/assets/js/creative.min.js',array(  ), '', true  );
+	wp_enqueue_script( 'slickJs', get_template_directory_uri() . '/vendor/slick/slick.min.js',array(  ), '', true  );
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js',array(  ), '', true  );
 }
 

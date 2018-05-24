@@ -4,40 +4,25 @@
  */
 get_header();
 ?>
-<?php
-$text_title_blok1 = get_post_meta( $post->ID, 'text_title_blok1', true);
-$text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
- ?>
- <?php if($text_title_blok1 && $text_blok1){ ?>
-<section class="bg-primary" id="about">
+
+
+
+<div id="about" class="global"></div>
+    <section class="bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center text-center">
-                    <h2 class="section-heading"><?php
-                    if($text_title_blok1){
-                     echo $text_title_blok1;
-                        }else{
-                      ?> 
-                    Скидка
-                    <?php } ?>
-                  </h2>
+                    <h2 class="section-heading"><a class="section-heading hov_for_1z" href="http://1z.by/">1Z.BY</a></h2>
                     <hr class="light">
-                    <p class="text-faded" style="font-size:18px;">
-                        <?php
-                    if($text_blok1){
-                     echo $text_blok1;
-                        }else{
-                      ?> 
-                    При оформлении заказа на ремонт через сайт, Вы  получаете <span style="font-size:25px;">скидку 10%</span>!
-                   <?php } ?>
-                    </p>
-                    <a href="" class="btn btn-default btn-xl sr-button my_button_zakaz" data-toggle="modal" data-target="#myModal">Заказать!</a>
+                    <p class="text-faded" style="font-size:18px;">Наш интернет-магазин в котором вы найдете все необходимые комплектующие для вашего компьютера!</p>
+                    <a href="http://1z.by/" target="_blank" class="btn btn-default btn-xl sr-button my_button_zakaz" >Перейти</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <?php } ?>
+
+    <?php  ?>
 
      <?php 
         $bg_mass=[];
@@ -57,62 +42,39 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
             <?php } }else{ ?>
             <section  id="services">
             <?php } ?>
+
+    <div id="services" class="global"></div>
+    <section id="services">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <?php $text_title_blok1_1 = get_post_meta( $post->ID, 'text_title_blok1_1', true); ?>
-                    <?php if($text_title_blok1_1 ){ ?>
-                    <h2 class="section-heading"><?php echo $text_title_blok1_1 ?></h2>
-                    <?php } ?>
+                    <h2 class="section-heading">Мы предлагаем следующие услуги</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
 
-               
+
 
             <div class="row my_heit">
-
-                    <?php 
-                    $services_list = get_post_meta( $post->ID, 'services_list', true);
-                        if($services_list){
-                            foreach ($services_list  as  $value) {
-
-                     ?>
                 <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
-                        <?php echo $value[icon_font]; ?>
+                        <i class="fa fa-4x fa-cog text-primary sr-icons fa-television" aria-hidden="true"></i>
                         <h3>Ремонт компьютеров</h3>
-                        <p class="text-muted">Бесплатная диагностика, поиск неисправностей в аппаратных и программных компонентов компьютеров или ноутбуков</p>
+                        <p class="text-muted">Бесплатная диагностика и поиск неисправностей </p>
                     </div>
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
                     <div class="linebottom"></div>
                 </div>
-                    <?php } } ?>
-<script >
- // Добовление класа для блока услуги
-    jQuery('#services i').addClass('text-primary sr-icons');
-    // конец  
-</script>
 
-
-               <!--  <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-cog text-primary sr-icons fa-laptop" aria-hidden="true"></i>
-                        <h3>Ремонт ноутбуков</h3>
-                        <p class="text-muted">Бесплатная диагностика, поиск неисправностей в аппаратных и программных компонентов компьютеров или ноутбуков</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                    <div class="linebottom"></div>
-                </div>
                 <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
                         <i class="fa fa-4x fa-cog text-primary sr-icons"></i>
                         <h3>Диагностика неисправностей</h3>
-                        <p class="text-muted">Бесплатная диагностика, поиск неисправностей в аппаратных и программных компонентов компьютеров или ноутбуков</p>
+                        <p class="text-muted">Бесплатная диагностика ипоиск неисправностей </p>
                     </div>
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
@@ -121,7 +83,7 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                     <div class="service-box">
                         <i class="fa fa-4x fa-search text-primary sr-icons"></i>
                         <h3>Профилактика</h3>
-                        <p class="text-muted">Проверка компонентов компьютера или ноутбука на работоспособность, отказоустойчивость, шумоизоляцию, теплопроводность</p>
+                        <p class="text-muted">Проверка компонентов компьютера или ноутбука </p>
                     </div>
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
@@ -143,63 +105,8 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                     </div>
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div> -->
-
-
-
-
-
-                <!-- <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-list-alt text-primary sr-icons"></i>
-                        <h3>Покупка</h3>
-                        <p class="text-muted">Помощь в выборе компьютера или ноутбука, сопровождение при покупке, оптовые закупка техники для организаций, закупка комплектующих, переферия, ПО и другое</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Доставка</h3>
-                        <p class="text-muted">Доставка нового компьютера или ноутбука, доставка в СЦ по гарантии (для более детального / сложного ремонта)</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-th text-primary sr-icons"></i>
-                        <h3>Сборка</h3>
-                        <p class="text-muted">Сборка нового компьютера, сборка компьютера из подходящих комплектующих, сборка под заказ</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-power-off  text-primary sr-icons"></i>
-                        <h3>Установка</h3>
-                        <p class="text-muted">Установка операционных систем Windows, драйверов, программ, начальная настройка компьютера или ноутбука, подключение к WI-FI или интернет</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div> -->
 
-
-
-
-
- 
-                <!-- <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>АутСорсинг</h3>
-                        <p class="text-muted">Модернизация компьютеров или ноутбуков, абоненское обслуживание по выгодным ценам, подключение переферии или других новых устройств</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
                 <div class="col-lg-4 col-md-6 text-center q1">
                     <div class="service-box">
                         <i class="fa fa-4x fa-indent text-primary sr-icons"></i>
@@ -209,103 +116,243 @@ $text_blok1 = get_post_meta( $post->ID, 'text_blok1', true);
                     <p class=" prise_servis"> от 25 руб</p>
                     <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-shield text-primary sr-icons"></i>
-                        <h3>Защита</h3>
-                        <p class="text-muted">Поиск и удаление вредоносных, рекламных, шпионских программ (вирусов, троянов, баннеров), установка антивируса, настройка защиты</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center q1">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-info text-primary sr-icons"></i>
-                        <h3>Онлайн помощь</h3>
-                        <p class="text-muted">Телефонная и удалённое техническое обслуживание, удалённое подключение к клиенту, устранение неполадок</p>
-                    </div>
-                    <p class=" prise_servis"> от 25 руб</p>
-                    <a href="" class="btn  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Заказать!</a>
-                </div>
-            </div> -->
-
-
+              
 
 
         </div>
     </section>
-    <?php 
-    $our_advantages = get_post_meta( $post->ID, 'Our_advantages', true);
-    $name_block_advantages = get_post_meta( $post->ID, 'name_block_advantages', true);
-    if($our_advantages && $name_block_advantages){     ?>
-    <section class="no-padding" id="portfolio">
+
+        </div>
+    </section>
+    <div id="profi_room" class="global"></div>
+    <section>
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Наша мастерская</h2>
+                    <hr class="primary">
+                </div>
+                </div>
+                <div class="col-lg-12">
+                <div class="wrap_main">
+                    <div>
+                        <img src="img/room/2.png">
+                    </div>
+                    <div>
+                        <img src="img/room/2.png">
+                    </div>
+                    <div>
+                        <img src="img/room/3.png">
+                    </div>
+                    <div>
+                        <img src="img/room/4.png">
+                    </div>
+                    <div>
+                        <img src="img/room/5.png">
+                    </div>
+                    <div>
+                        <img src="img/room/5.png">
+                    </div>
+                    <div>
+                        <img src="img/room/2.png">
+                    </div>
+                    <div>
+                        <img src="img/room/3.png">
+                    </div>
+               </div>
+           </div>
+       </div> 
+    </section>
+    <!-- <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">По статистике 1 из 10</h2>
+                    <hr class="light">
+                    <p class="text-faded2">
+                       поломок вашего устройста решается по телефону с нашим консультантом    
+                    </p>
+                    <a href="" class="descktop_block btn btn-default btn-xl sr-button my_button_zakaz  btn-xl sr-button" data-toggle="modal" data-target="#myModal">Закажите консультацию</a>
+                    <a href="tel:+375298488855" class=" mobile_phone btn btn-default btn-xl sr-button my_button_zakaz" >Звоните</a>
+                </div>
+            </div>
+        </div>
+    </aside> -->
+    <div id="portfolio" class="global"></div>
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">
-                    <?php if($name_block_advantages){ ?>
-                    <?php echo $name_block_advantages; ?>
-                    <?php }else{ ?>
-                    Наши приемущества</h2>
-                    <?php } ?>
+                    <h2 class="section-heading">Наши приемущества</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                        <div class="icon_heading">
+                           <i class="fa fa-subway" aria-hidden="true"></i>
+                        </div>
+                        <div class="heading_title">
+                           Удобное расположение              
+                        </div> 
+                        <div class="heading_text">
+                            Мы находимся в 5 минутах хотьбы от станции метро Пралетарская.
+                        </div>
+                </div> 
+                <div class="col-lg-3 col-md-6">
+                        <div class="icon_heading">
+                          <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                        </div>
+                        <div class="heading_title">
+                            Вызов мастера на дом            
+                        </div> 
+                        <div class="heading_text">
+                            В нашей мастерской вы можете вызвать мастера на дом.
+                        </div>
+                </div> 
+                <div class="col-lg-3 col-md-6">
+                        <div class="icon_heading">
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="heading_title">
+                             Только качественная работа           
+                        </div> 
+                        <div class="heading_text">
+                            Восстановление данных, установка программ, чистка от пыли, и многое другое.  
+                        </div>
+                </div> 
+                <div class="col-lg-3 col-md-6">
+                        <div class="icon_heading">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        </div>
+                        <div class="heading_title">
+                            Модернизируем ваш компьютер              
+                        </div> 
+                        <div class="heading_text">
+                          Заберем ваши старые комплектующие взамен на новые при ремонтре вашего устройства у нас в мастерской. 
+                        </div>
+                </div>        
+            </div>
+        </div>
+    </section>
+    <div id="pay" class="global"></div>
+    <section class="bg-form">
+        <div class="container">
+            <div class="row" >
+                <div class="col-xs-12">
+                    <h3 class="bg-form-title">Способы оплаты</h3>
+                </div>
+                <div class="col-xs-12">
+                    <div class="bg-form-line"></div>
+                </div>
+                <div class="col-xs-12">
+                    <p class="bg-form-text">Мы предлагаем вам следубщие способы оплаты</p>
+                </div>
+                <div class="col-xs-12">
+                    <div class="col-xs-6 text_center">
+                        <img src="img/money.png">
+                        <h4>Наличными</h4>
+                    </div>
+                    <div class="col-xs-6  text_center">
+                        <img src="img/credit-card.png">
+                        <h4>Безналичный НДС-ЭСЧФ</h4>
+                    </div>
+                </div>
 
-                <?php 
+                <!-- <div class="col-xs-12">
+                    <p class="bg-form-text" >Оставьте заявку и мы обязательно с Вами свяжемся.</p>
+                </div> -->
+                <!-- <div class="col-xs-12">
+                    <div class="bg-form-input" >
+                        <div>
+                            <input placeholder="Ваше имя"  type="text">
+                        </div>
+                        <div>
+                            <input placeholder="Ваш телефон" type="text">
+                        </div>
+                        <div>
+                            <textarea rows="5" cols="30" placeholder="Напишите, что вас интересует."></textarea>
+                        </div>
+                        
+                        <button>Отправить</button>
+                    </div> 
+                </div> -->
                 
-                     
-                     if($our_advantages){
-                        foreach ($our_advantages as  $value) {
-                    
-                ?>
+            </div>
+        </div>
+    </section>
 
-                 <div class="col-lg-3 col-sm-3">                    
-                    <div data-toggle="tooltip" data-placement="bottom" class="master portfolio-box" >
-                         <div class="project-category text-faded">
-                                    <?php echo $value[ord_title]; ?>
+    <div id="my_portfolio" class="global"></div>
+    <section>
+        <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="defaultOtst">
+                 <div class="TextAbout2 ourServ">
+                <h2>Наши выполненные работы</h2>
+                <hr class="primary">
+                </div>
+                <div class="Wrappmain">
+                    <div class="main_two">
+                        <div class="container">
+                            <div class="row otstRow">
+                                <div class="col-sm-6">
+                                    <h3>до</h3>
+                                    <div class="imgAvatar">
+                                        <img src="img/do.png" alt="avatar">
+                                    </div>
                                 </div>
-                        <img src="<?php echo $value[Our_upload_fon]; ?>" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                
-                                <div class="project-name">
-                                    <?php echo $value[ord_description]; ?>
+                                <div class="col-sm-6">
+                                    <h3>после</h3>
+                                    <div class="imgAvatar">
+                                        <img src="img/posle.png" alt="avatar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="container">
+                            <div class="row otstRow">
+                                <div class="col-sm-6">
+                                    <h3>до</h3>
+                                    <div class="imgAvatar">
+                                        <img src="img/do2.png" alt="avatar">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h3>после</h3>
+                                    <div class="imgAvatar">
+                                        <img src="img/posle2.png" alt="avatar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="container">
+                            <div class="row otstRow">
+                                <div class="col-sm-6">
+                                    <h3>до</h3>
+                                    <div class="imgAvatar">
+                                        <img src="img/posle3.png" alt="avatar">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h3>после</h3>
+                                    <div class="imgAvatar">
+                                        <img src="img/do3.png" alt="avatar">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <?php } } ?>
-
             </div>
         </div>
+    </div>
+</div>
     </section>
-<?php } ?>
-<?php
-$name_block_priziv = get_post_meta( $post->ID, 'name_block_priziv', true);
-$description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv', true);
- if( $name_block_priziv || $description_block_priziv){ ?>
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading"><?php echo $name_block_priziv ?></h2>
-                    <hr class="light">
-                    <p class="text-faded2" style="text-align:left;">
-                        <?php echo $description_block_priziv ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </aside>
-<?php } ?>
 
-      <!-- ОТЗЫВЫ -->
+	<!-- ОТЗЫВЫ -->
         <?php $photo_fon_block = get_post_meta( $post->ID, 'photo_fon_block', true); ?>
       <section id="testimonialTabs" style="background:url('<?php echo $photo_fon_block ?>') repeat scroll 0 0" class="row contentRowPad">
         <div class="container">
@@ -322,10 +369,6 @@ $description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv'
             </div>
             <?php } ?>
             <div class="row">
-
-
-         
-
 
 
                 <ul class="nav nav-tabs" role="tablist" id="testiTab">
@@ -356,82 +399,111 @@ $description_block_priziv = get_post_meta( $post->ID, 'description_block_priziv'
                 <?php } ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--                 <ul class="nav nav-tabs" role="tablist" id="testiTab">
-                    <li role="presentation" class="active"><a href="#testi1" aria-controls="testi1" role="tab" data-toggle="tab">
-                        <img src="img/2.png" alt="">
-                    </a></li>
-                    <li role="presentation"><a href="#testi2" aria-controls="testi2" role="tab" data-toggle="tab">
-                        <img src="img/2.png" alt="">
-                    </a></li>
-                    <li role="presentation"><a href="#testi3" aria-controls="testi3" role="tab" data-toggle="tab">
-                        <img src="img/2.png" alt="">
-                    </a></li>
-                    <li role="presentation"><a href="#testi4" aria-controls="testi4" role="tab" data-toggle="tab">
-                        <img src="img/2.png" alt="">
-                    </a></li>
-                    <li role="presentation"><a href="#testi5" aria-controls="testi5" role="tab" data-toggle="tab">
-                        <img src="img/2.png" alt="">
-                    </a></li>
-                </ul>
-
-                <div class="tab-content testiTabContent">
-                    <div role="tabpanel" class="tab-pane active" id="testi1">
-                        <h5 class="customerName">Иван Волков</h5>
-                        <h5 class="customerType">Веб-разработчик</h5>
-                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="testi2">
-                        <h5 class="customerName">Dwayne johnson</h5>
-                        <h5 class="customerType">happy customer</h5>
-                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="testi3">
-                        <h5 class="customerName">Dwayne johnson</h5>
-                        <h5 class="customerType">happy customer</h5>
-                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="testi4">
-                        <h5 class="customerName">Dwayne johnson</h5>
-                        <h5 class="customerType">happy customer</h5>
-                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="testi5">
-                        <h5 class="customerName">Dwayne johnson</h5>
-                        <h5 class="customerType">happy customer</h5>
-                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
-                    </div>
-                </div> -->
-
-
-
             </div>
         </div>
     </section>
 
+    <!-- ОТЗЫВЫ  END-->
+<?php if(ot_get_option('lat') && ot_get_option('lng')){ ?>
+    <div id="map" style="height: 450px">
+        
+    </div>
+    <script>
+      function initMap() {
+        var uluru = {lat: <?php echo ot_get_option('lat') ?>, lng: <?php echo ot_get_option('lng') ?>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <?php } ?>
 
 
+  
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Контакты</h2>
+                    <hr class="primary">
+                    <!-- <p>Ассоциация Компьютерных Мастеров</p> -->
+                </div>
+                <div class="col-lg-12 text-center">
+                    <a class="btn btn-xl sr-button" data-toggle="modal" data-target="#myModal" style=" box-shadow: inset 0 3px 5px rgba(0,0,0,0); margin-left: 10px; font-size:16px;"><i class="fa fa-envelope-o fa-3x sr-contact"></i><br />Отправить заявку</a>                    
+                    <a class="btn btn-xl sr-button" href="tel:+375298488855" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />+375 (29) 848-88-55</a>                                        
+                    <a class="btn btn-xl sr-button" href="tel:+375296276977" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-phone fa-3x sr-contact"></i><br />+375 (29) 627-69-77</a>
+                    <a class="btn btn-xl sr-button" style="box-shadow: inset 0 3px 5px rgba(0,0,0,0); font-size:16px;"><i class="fa fa-map-marker fa-3x sr-contact" aria-hidden="true"></i><br />п-р Партизанский 8.,<br /> корп. 15 ком. 104.</a>                                          
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog" style="top:25%;">
+        <div class="modal-dialog">
+            <form id="form" class="form-horizontal">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="text-align: center;">                        
+                        <h4 class="modal-title">Заказать сейчас</h4>
+                    </div>
+                    <div class="modal-body" style="text-align: center;">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <!--<label class="col-md-4 control-label" for="textinput">Имя</label>-->
+                            <div class="col-md-12">
+                                <input id="name" name="name" type="text" placeholder="Имя" class="form-control input-md" required="">                            
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <!--<label class="col-md-4 control-label" for="textinput">Телефон</label>-->
+                            <div class="col-md-12">
+                                <input id="phone" name="phone" type="text" placeholder="Телефон" class="form-control input-md" required=""> 
+                                <span id="wrongPhone" class="help-block" style="display:none; color:darkred;">Некорректный номер телефона!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="text-align: center;">
+                        <input name="submit" type="submit" class="btn btn-default" value="ОТПРАВИТЬ" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
+<!-- старое подключение -->
+
+ <!-- Подключение блока акция -->
+<?php // require( trailingslashit( get_template_directory() ) . 'parts/block-shares.php' );  ?>
+ <!-- Конец подключение блока акция -->
 
 
+  <!-- Подключение блока наши услуги -->
+<?php // require( trailingslashit( get_template_directory() ) . 'parts/block-servises.php' );  ?>
+ <!-- Конец подключение блока наши услуги -->
 
+
+  <!-- Подключение блока наши преемущества -->
+<?php // require( trailingslashit( get_template_directory() ) . 'parts/block-advantages.php' );  ?>
+ <!-- Конец подключение блока наши преемущества -->
+
+
+    <!-- Подключение блока объявления -->
+<?php // require( trailingslashit( get_template_directory() ) . 'parts/block-priziv.php' );  ?>
+ <!-- Конец подключение блока объявление -->
+
+
+   <!-- Подключение блока тзывы -->
+<?php // require( trailingslashit( get_template_directory() ) . 'parts/block-mnenie.php' );  ?>
+ <!-- Конец подключение блока отзывы -->
 
 <?php
 get_footer();
