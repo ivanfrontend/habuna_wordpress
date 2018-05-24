@@ -195,11 +195,96 @@ function custom_meta_boxes() {
       ),
          
          ),
+
+        
     
             ),
 
+         array(
+        'label'       => 'Настройки блока наши выполненные работы',
+        'id'          => 'section_blok5_tab',
+        'type'        => 'tab'
+      ), 
+                     array(
+        'id'          => 'name_block_work',
+        'label'       => 'Название блока',
+        'desc'        => '',
+        'type'        => 'text',
+      ), 
+                                  array(
+        'id'          => 'setings_list_kartinka',
+        'label'       => 'Добавить фото',
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'settings'    => array(
+                      array(
+        'id'          => 'photo_compDO',
+        'label'       => 'Загрузите фото компьютера до',
+        'desc'        => '',
+        'type'        => 'upload',
+      ),
+                       array(
+        'id'          => 'photo_compPOSLE',
+        'label'       => 'Загрузите фото компьютера после',
+        'desc'        => '',
+        'type'        => 'upload',
+      ),
+
+        )),
+
+               array(
+        'label'       => 'Настройки блока способы оплаты',
+        'id'          => 'section_blok_pay',
+        'type'        => 'tab'
+      ),       
+                             array(
+        'id'          => 'photo_fon_block_pay',
+        'label'       => 'Загрузите фон блока',
+        'desc'        => '',
+        'type'        => 'upload',
+      ),   
+      array(
+        'id'          => 'name_block_pay',
+        'label'       => 'Название блока',
+        'desc'        => '',
+        'type'        => 'text',
+      ),     
+      array(
+        'id'          => 'desc_block_pay',
+        'label'       => 'Описание блока',
+        'desc'        => '',
+        'type'        => 'text',
+      ),             
+                            array(
+        'id'          => 'photo_img1_block_pay',
+        'label'       => 'Загрузите первую картинку',
+        'desc'        => '',
+        'type'        => 'upload',
+      ),   
+                            array(
+        'id'          => 'desc_block_pay_img',
+        'label'       => 'Описание первой картинки',
+        'desc'        => '',
+        'type'        => 'text',
+      ),         
+                            array(
+        'id'          => 'photo_img2_block_pay',
+        'label'       => 'Загрузите вторую картинку',
+        'desc'        => '',
+        'type'        => 'upload',
+      ),    
+                            array(
+        'id'          => 'desc_block_pay_img2',
+        'label'       => 'Описание второй картинки',
+        'desc'        => '',
+        'type'        => 'text',
+      ),         
+
 
             ),
+
+  
        );
 
 

@@ -241,27 +241,93 @@ get_header();
             </div>
         </div>
     </section>
+    
     <div id="pay" class="global"></div>
-    <section class="bg-form">
+     <?php $photo_fon_block_pay = get_post_meta( $post->ID, 'photo_fon_block_pay', true); ?>
+      <section class="bg-form" style="background:url('<?php echo $photo_fon_block_pay ?>') repeat scroll 0 0" class="row contentRowPad">
+    <!-- <section class="bg-form"> -->
         <div class="container">
             <div class="row" >
                 <div class="col-xs-12">
-                    <h3 class="bg-form-title">Способы оплаты</h3>
+
+                    <?php 
+                $name_block_pay = get_post_meta( $post->ID, 'name_block_pay', true);
+                if($name_block_pay){
+             ?>
+                <h3 class="bg-form-title"><?php echo $name_block_pay ?></h3>
+            <?php }else{ ?>
+                <h3 class="bg-form-title">Способы оплаты</h3>
+            <?php } ?>
                 </div>
                 <div class="col-xs-12">
                     <div class="bg-form-line"></div>
                 </div>
                 <div class="col-xs-12">
-                    <p class="bg-form-text">Мы предлагаем вам следубщие способы оплаты</p>
+                     <?php 
+                $desc_block_pay = get_post_meta( $post->ID, 'desc_block_pay', true);
+                if($desc_block_pay){
+             ?>
+                <p class="bg-form-text"><?php echo $desc_block_pay ?></p>
+            <?php }else{ ?>
+                <p class="bg-form-text">Мы предлагаем вам следубщие способы оплаты</p>
+            <?php } ?>
+
+
+                   <!--  <p class="bg-form-text">Мы предлагаем вам следубщие способы оплаты</p> -->
                 </div>
                 <div class="col-xs-12">
                     <div class="col-xs-6 text_center">
-                        <img src="img/money.png">
-                        <h4>Наличными</h4>
+
+                        <?php    
+                                $photo_img1_block_pay = get_post_meta( $post->ID, 'photo_img1_block_pay', true);
+                                if($photo_img1_block_pay){
+                             ?>
+                                <img src="<?php echo $photo_img1_block_pay ?>">
+                                
+                            <?php }else{ ?>
+                             <img src="http://habuna.loc/wp-content/uploads/2018/05/money.png">
+                            
+                            <?php } ?>
+
+                             <?php    
+                                $desc_block_pay_img = get_post_meta( $post->ID, 'desc_block_pay_img', true);
+                                if($desc_block_pay_img){
+                             ?>
+                                <h4><?php echo $desc_block_pay_img ?></h4>
+                                
+                            <?php }else{ ?>
+                             <h4>Наличными</h4>
+                            <?php } ?>
+                       
+                       
                     </div>
                     <div class="col-xs-6  text_center">
-                        <img src="img/credit-card.png">
-                        <h4>Безналичный НДС-ЭСЧФ</h4>
+                        
+                         <?php    
+                                $photo_img2_block_pay = get_post_meta( $post->ID, 'photo_img2_block_pay', true);
+                                if($photo_img2_block_pay){
+                             ?>
+                                <img src="<?php echo $photo_img2_block_pay ?>">
+                                
+                            <?php }else{ ?>
+                             <img src="http://habuna.loc/wp-content/uploads/2018/05/credit-card.png">
+                            
+                            <?php } ?>
+                            
+                         
+
+                             <?php    
+                                $desc_block_pay_img2 = get_post_meta( $post->ID, 'desc_block_pay_img2', true);
+                                if($desc_block_pay_img2){
+                             ?>
+                                <h4><?php echo $desc_block_pay_img2 ?></h4>
+                                
+                            <?php }else{ ?>
+                             <h4>Безналичный НДС-ЭСЧФ</h4>
+                            <?php } ?>   
+
+                        
+                        
                     </div>
                 </div>
                 
@@ -270,15 +336,28 @@ get_header();
     </section>
 
     <div id="my_portfolio" class="global"></div>
+
     <section>
         <div class="container">
     <div class="row">
         <div class="col-sm-12">
             <div class="defaultOtst">
-                 <div class="TextAbout2 ourServ">
+                    <?php 
+                $name_block_work = get_post_meta( $post->ID, 'name_block_work', true);
+                if($name_block_work){
+             ?>
+            <div class="TextAbout2 ourServ">
+                <h2><?php echo $name_block_work ?></h2>
+                <hr class="primary">
+            </div>
+            <?php }else{ ?>
+             <div class="TextAbout2 ourServ">
                 <h2>Наши выполненные работы</h2>
                 <hr class="primary">
-                </div>
+            </div>
+            <?php } ?>
+                <!-- <h2>Наши выполненные работы</h2> -->
+                                
                 <div class="Wrappmain">
                     <div class="main_two">
                         <div class="container">
@@ -286,18 +365,39 @@ get_header();
                                 <div class="col-sm-6">
                                     <h3>до</h3>
                                     <div class="imgAvatar">
-                                        <img src="img/do.png" alt="avatar">
+                                                         
+                                                         <?php 
+                                    $setings_list_kartinka = get_post_meta( $post->ID, 'setings_list_kartinka', true);
+                                    if($setings_list_kartinka){
+                                    foreach ($setings_list_kartinka as $key => $val) {        
+                                 ?>
+                                            <img src="<?php echo $val[photo_compDO] ?>" alt="">
+                                        <?php } }?>
+
+
+                                        <!-- <img src="img/do.png" alt="avatar"> -->
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <h3>после</h3>
                                     <div class="imgAvatar">
-                                        <img src="img/posle.png" alt="avatar">
+                                         
+                                          <?php 
+                                    $setings_list_kartinka = get_post_meta( $post->ID, 'setings_list_kartinka', true);
+                                    if($setings_list_kartinka){
+                                    foreach ($setings_list_kartinka as $key => $val) {        
+                                 ?>
+                                            <img src="<?php echo $val[photo_compPOSLE] ?>" alt="">
+                                        <?php } } ?>
+                                        <!-- <img src="img/posle.png" alt="avatar"> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                            <div class="container">
+                                
+
+
+          <!--                   <div class="container">
                             <div class="row otstRow">
                                 <div class="col-sm-6">
                                     <h3>до</h3>
@@ -328,13 +428,14 @@ get_header();
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div id="reviewsabout" class="global"></div>
     </section>
 
 	<!-- ОТЗЫВЫ -->
